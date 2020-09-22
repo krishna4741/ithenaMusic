@@ -1,4 +1,6 @@
 # MusicDNA - A Music Player like no other
+##Taken all the way inspiration from MusicDNA application, Updated it to latest android versions, remove the boilerplate code, updated it to the latest one. All the rights are reserved to MusicDNA.
+
 <img src = "https://github.com/harjot-oberai/MusicStreamer/blob/master/screenshots/splash.png" width = "800"><br><br>
 <a href='https://play.google.com/store/apps/details?id=com.ithena.krishna.ithenaMusic&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 [<img src="https://f-droid.org/badge/get-it-on.png"
