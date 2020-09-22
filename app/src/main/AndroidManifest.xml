@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ithena.krishna.ithenaMusic">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+
+    <application
+        android:name="com.ithena.krishna.ithenaMusic.IthenaMusicApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/music_dna_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/MyMaterialTheme">
+        <activity
+            android:name="com.ithena.krishna.ithenaMusic.activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <receiver android:name="com.ithena.krishna.ithenaMusic.notificationmanager.AudioPlayerBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.ithena.krishna.ithenaMusic.ACTION_PLAY_PAUSE" />
+                <action android:name="com.ithena.krishna.ithenaMusic.ACTION_NEXT" />
+                <action android:name="com.ithena.krishna.ithenaMusic.ACTION_PREV" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.ithena.krishna.ithenaMusic.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name="com.ithena.krishna.ithenaMusic.activities.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.ithena.krishna.ithenaMusic.notificationmanager.MediaPlayerService"
+            android:stopWithTask="false" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="020e360fee5fdd83e6fe111174abd62efddb08fa" />
+    </application>
+
+</manifest>
